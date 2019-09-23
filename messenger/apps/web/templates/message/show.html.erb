@@ -1,0 +1,23 @@
+<div class='content-new'>
+  <div class='form'>	
+		<div id="content" hidden>
+			<label>Message:</label>
+		</br>
+			<%= text %>
+		</br>
+			<label>Password:</label>
+			<p id="password"><%= password %></p>
+		</div>
+
+		<% if text != 'Wrong url' %>
+			<h4 id="text_write_password">Write password to see message</h4>
+		  </br>
+			<input id="confirm_password" name="password" type="password"/>
+			<input type="button" value="Show message" id="btn_show">
+		<% else %>
+			<%= text %>
+		<% end %>
+  </div>
+</div>
+
+<%= javascript 'confirm_password' %>

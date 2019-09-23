@@ -1,0 +1,39 @@
+require: rubocop
+
+AllCops:
+  TargetRubyVersion: 2.6
+  Exclude:
+    - bin/*
+    - 'node_modules/**/*'
+    - 'vendor/**/*'
+
+Style/Documentation:
+  Enabled: false
+
+Metrics/LineLength:
+  Max: 120
+  Exclude:
+    - !ruby/regexp /schema\.rb$/
+
+Metrics/BlockLength:
+  ExcludedMethods: [
+    'describe', 'xdescribe', 'context',  'xcontext', 'it', 'xit', 'FactoryBot.define', 'factory', 'let', 'before', 'after',
+    'RSpec.configure', 'shared_examples', 'resource', 'post', 'aggregate_failures', 'xdescribe',
+    'draw', 'guard', 'create_table', 'define', 'configure'
+  ]
+
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - db/migrate/*
+
+Layout/AlignHash:
+  EnforcedColonStyle: table
+
+Lint/AmbiguousBlockAssociation:
+  Exclude:
+    - 'spec/*'
+    - 'spec/**/*'
+    - 'spec/***/**/*'
+    - 'spec/****/***/**/*'
+    - 'spec/*****/****/***/*'

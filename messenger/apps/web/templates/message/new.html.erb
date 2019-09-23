@@ -1,0 +1,42 @@
+<div class='content-new'>
+  <div class='form'>
+    <h2>Add message</h2>
+    <%=
+      form_for :message, '/message' do
+        div class: 'input' do
+          label      :text
+          text_area :text, class:"form-control"
+        end
+        br
+        div class: 'input' do
+          label      :password
+          text_field :password, class:"form-control"
+        end
+
+        div class: 'input' do
+          hidden_field :safelink, value:"#{generate_safe_link}"
+        end
+
+        div class: 'input' do
+          label      :destroy_after_1_visit
+          check_box :destroy_after_1_visit, value:1, id:'destroy_after_1_visit', checked: false
+        end
+
+        div class: 'input' do
+          label      :destroy_after_1_hour
+          check_box :destroy_after_1_hour, value:1, id:'destroy_after_1_hour', checked: false
+        end
+
+        div class: 'input' do
+          label      :destroy_after_hours
+          number_field :destroy_after_hours, value:1, id:'destroy_after_hours', min:1, class:"form-control"
+        end
+        br
+        div class: 'controls' do
+          submit 'Create Message', disabled: true, id:"btn_create"
+        end
+      end
+    %>
+  </div>
+</div>
+<%= javascript 'home_page' %>

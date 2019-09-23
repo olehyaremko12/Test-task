@@ -1,0 +1,3 @@
+project=messenger
+test=rspec
+template=erb

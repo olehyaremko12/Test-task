@@ -1,0 +1,18 @@
+.container, .content-new {
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.container{
+	width:100%;
+	height:100vh;
+}
+.content-new{
+	border: 1px solid grey;
+	width: 50%;
+	min-height:50vh;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	border-radius: 10px;
+}
